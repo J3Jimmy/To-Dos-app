@@ -17,7 +17,7 @@ const TodosForm = ({ getToDos, showSuccessNotf, showFailNotf, setIsLoading, toDo
     const submit = (data) => {
         setIsLoading(true);
         if(toDoSelected){
-            axios.put(`https://todos-crud.fly.dev/api/v1/todos/${toDoSelected.id}`, data)
+            axios.put(`https://localhost:8080/todos/${toDoSelected.id}`, data)
                 .then(() => {
                     getToDos();
                     showSuccessNotf("To do updated successfully");
@@ -26,7 +26,7 @@ const TodosForm = ({ getToDos, showSuccessNotf, showFailNotf, setIsLoading, toDo
                 .catch(() => showFailNotf())
                 .finally(() => setIsLoading(false))
         } else {
-            axios.post('https://todos-crud.fly.dev/api/v1/todos', data)
+            axios.post('https://localhost:8080/todos', data)
                 .then(() => {
                     getToDos()
                     showSuccessNotf("To do created successfully")
