@@ -18,7 +18,7 @@ function App() {
   }, []);
   
   const getToDos = () => {
-    axios.get('https://todos-crud.fly.dev/api/v1/todos')
+    axios.get('http://localhost:8080/todos')
       .then(res => setToDos(res.data))
       .finally(() => setIsLoading(false));
   }
