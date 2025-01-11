@@ -6,7 +6,7 @@ const TodosList = ({ toDos, getToDos, showSuccessNotf, showFailNotf, setIsLoadin
 
     const deleteToDo = id => {
         setIsLoading(true);
-        axios.delete(`https://localhost:8080/todos/${id}`)
+        axios.delete(`http://localhost:8080/todos/${id}`)
             .then(() => {
                 getToDos();
                 showSuccessNotf("To do removed successfully");
