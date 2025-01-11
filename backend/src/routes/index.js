@@ -3,6 +3,6 @@ const toDoRouter = require('./toDo.router');
 const router = express.Router();
 
 // colocar las rutas aquí
-router.use(toDoRouter);
+router.use('/todos', toDoRouter);
 
 module.exports = router;

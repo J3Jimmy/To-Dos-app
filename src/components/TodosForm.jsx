@@ -17,7 +17,7 @@ const TodosForm = ({ getToDos, showSuccessNotf, showFailNotf, setIsLoading, toDo
     const submit = (data) => {
         setIsLoading(true);
         if(toDoSelected){
-            axios.put(`https://localhost:8080/todos/${toDoSelected.id}`, data)
+            axios.put(`https://localhost:8080/todos/${toDoSelected.id}`, data) // Changed to http
                 .then(() => {
                     getToDos();
                     showSuccessNotf("To do updated successfully");
@@ -26,7 +26,7 @@ const TodosForm = ({ getToDos, showSuccessNotf, showFailNotf, setIsLoading, toDo
                 .catch(() => showFailNotf())
                 .finally(() => setIsLoading(false))
         } else {
-            axios.post('https://localhost:8080/todos', data)
+            axios.post('http://localhost:8080/todos', data) // Changed to http
                 .then(() => {
                     getToDos()
                     showSuccessNotf("To do created successfully")
